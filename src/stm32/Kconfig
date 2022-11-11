@@ -200,6 +200,14 @@ config STM32F103GD_DISABLE_SWD
         and PA14 pins from being available. Selecting this option
         disables SWD at startup and thus makes these pins available.
 
+config STM32F103_ALT_ADC
+    bool "Alternative ADC (for Nation stm32f103 clones)"
+    depends on MACH_STM32F103 && LOW_LEVEL_OPTIONS
+    default n
+    help
+        The Nation clone of the STM32F103 mcu may not work correctly.
+        This cortex-M4 chip is very similar to F103 but has a
+        have different ADC. Enable this option to change the ADC.
 
 ######################################################################
 # Bootloader
